@@ -19,4 +19,4 @@ jobs:
       actions: write
     steps:
       - name: Merge-up
-        uses: silverstripe/gha-merge-up@v1
+        uses: emteknetnz/gha-merge-up@main
