@@ -8,4 +8,6 @@ on:
 jobs:
   ci:
     name: CI
-    uses: silverstripe/gha-ci/.github/workflows/ci.yml@v1
+    # Do not run duplicate CI workflow on push event when it's a pull-request from the same repo i.e not a fork
+    if: github.event_name != 'push' || github.event.pull_request.number == null
+    uses: emteknetnz/gha-ci/.github/workflows/ci.yml@main
