@@ -8,6 +8,7 @@ on:
 jobs:
   ci:
     name: CI
-    # Do not run if is PR from same repo as this repo i.e. not a fork
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository
+    # Do not run if is PR is from same repo as this repo i.e. not a fork
+    # Only check this condition if the account starts with 'emteknetnz'
+    if: github.event_name != 'pull_request' || !startsWith(github.event.pull_request.head.repo.owner.login, 'emteknetnz') || github.event.pull_request.head.repo.full_name != github.repository 
     uses: emteknetnz/gha-ci/.github/workflows/ci.yml@main
