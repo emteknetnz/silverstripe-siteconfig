@@ -8,6 +8,6 @@ on:
 jobs:
   ci:
     name: CI
-    # Do not run duplicate CI workflow on push event when it's a pull-request from the same repo i.e not a fork
-    if: github.event_name != 'push' || (github.event_name == 'push' && github.event.pull_request == '')
+    # Do not run if is PR from same repo as this repo i.e. not a fork
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository
     uses: emteknetnz/gha-ci/.github/workflows/ci.yml@main
