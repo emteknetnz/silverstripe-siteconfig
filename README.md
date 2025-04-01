@@ -8,6 +8,8 @@
 SiteConfig provides a `Settings` tab in the admin section allowing users to set
 site wide global configuration.
 
+.
+
 ## Installation
 
 ```sh
