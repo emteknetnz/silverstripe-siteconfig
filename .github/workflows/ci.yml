@@ -7,16 +7,16 @@ on:
 
 jobs:
   mycontext:
-  name: My Context
-  runs-on: ubuntu-latest
-  steps:
-    - name: Context
-      run: |
-        # Print the event name
-        # github.event_name - The name of the event that triggered the workflow run
-        echo "github.event_name: ${{ github.event_name }}"
-        # github.event.pull_request.number - The number of the pull request that triggered the workflow run
-        echo "github.event.pull_request.number: ${{ github.event.pull_request.number }}"
+    name: My Context
+    runs-on: ubuntu-latest
+    steps:
+      - name: Context
+        run: |
+          # Print the event name
+          # github.event_name - The name of the event that triggered the workflow run
+          echo "github.event_name: ${{ github.event_name }}"
+          # github.event.pull_request.number - The number of the pull request that triggered the workflow run
+          echo "github.event.pull_request.number: ${{ github.event.pull_request.number }}"
 
   ci:
     name: CI
